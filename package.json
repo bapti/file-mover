@@ -18,10 +18,9 @@
   },
   "homepage": "https://github.com/bapti/file-mover#readme",
   "dependencies": {
-    "del": "^2.0.2",
-    "fs-extra": "^0.24.0",
     "globby": "^3.0.1",
     "highland": "^2.5.1",
+    "rimraf": "^2.4.3",
     "yargs": "^3.26.0"
   },
   "devDependencies": {
