@@ -20,5 +20,8 @@
     "fs-extra": "^0.24.0",
     "globby": "^3.0.1",
     "highland": "^2.5.1"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.3"
   }
 }
