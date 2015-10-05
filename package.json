@@ -4,6 +4,7 @@
   "description": "command line util for scanning directories and moving files",
   "main": "src/index.js",
   "scripts": {
+    "start": "node src/index.js",
     "test": "npm test"
   },
   "repository": {
@@ -17,9 +18,11 @@
   },
   "homepage": "https://github.com/bapti/file-mover#readme",
   "dependencies": {
+    "del": "^2.0.2",
     "fs-extra": "^0.24.0",
     "globby": "^3.0.1",
-    "highland": "^2.5.1"
+    "highland": "^2.5.1",
+    "yargs": "^3.26.0"
   },
   "devDependencies": {
     "mocha": "^2.3.3"
