@@ -7,6 +7,8 @@ var path = require("path")
 var del = require("del")
 var rm = require("rimraf")
 
+var folder = "D:/torrents/"
+
 process.on('uncaughtException', function(err) {
   console.log(err);
 });
@@ -14,7 +16,7 @@ process.on('uncaughtException', function(err) {
 var moveFile = _.wrapCallback(
   (oldPath, done) => {
     fileName = path.basename(oldPath)
-    newPath = `C:/Users/Neil/torrents/${fileName}`
+    newPath = `${folder}${fileName}`
     console.log(`
       Moving file: ${fileName}
         from : ${oldPath}
@@ -32,7 +34,7 @@ var getFilesizeInMegaBytes = (filename) => {
   return fileSizeInBytes / 1000000.0
 }
 
-var cleaner = _(globby("C:/Users/Neil/torrents/*/"))
+var cleaner = _(globby(`${folder}*/`))
   .flatten()
   .filter((filePath) => {
     return !filePath.endsWith("Temp/")
@@ -45,7 +47,7 @@ var cleaner = _(globby("C:/Users/Neil/torrents/*/"))
 
 var errors = []
 
-_(globby("C:/Users/Neil/torrents/*/*", '!C:/Users/Neil/torrents/Temp**'))
+_(globby(`${folder}/*/*`, `!${folder}/Temp**`))
   .flatten()
   .filter((filePath) => {
     return filePath.endsWith(".avi")
